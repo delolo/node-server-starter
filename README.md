@@ -1,6 +1,6 @@
-# Setting up a fake HTTP server using the Node packages Express and Faker
+# How to set up a fake HTTP server using Express and Faker
 
-This is a starter project for serving random fake JSON data locally. It's taken from [this Egghead.io tutorial][tutorial].
+This is a starter project for serving random fake JSON data on your machine. It's taken from [this Egghead.io tutorial][tutorial].
 
 ## Prerequisites
 
@@ -17,7 +17,26 @@ npm install express faker nodemon
 
 ## Development
 
-Create a `server.js` script as included here. How to extend this should be self-explanatory. All the details can
+Create a `server.js` script like the example included in this repository:
+
+```
+var express = require('express');
+var faker = require('faker');
+
+var app = express();
+
+app.get('/random-user', function(req, res) {
+	var user = faker.helpers.userCard();
+	user.avatar = faker.image.avatar();
+	res.json(user);
+});
+
+app.listen(3000, function() {
+	console.log('App listening on localhost:3000');
+});
+```
+
+ How to extend this should be self-explanatory. All the details can
 be found on the links to [express] and [faker].
 
 ## Deployment
