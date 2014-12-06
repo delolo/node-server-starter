@@ -9,7 +9,7 @@ manually without `npm` but I recommend `npm` because it makes life easier.
 
 ## Setup
 
-We'll be using [express] and [faker] and [nodemon]. To install run:
+We'll be using [express] and [faker] and [nodemon]. To install run the following command in the root folder:
 
 ```
 npm install express faker nodemon
